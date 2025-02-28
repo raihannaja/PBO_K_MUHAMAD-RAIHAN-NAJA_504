@@ -1,41 +1,38 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main (String [] agrs){
         Scanner scanner = new Scanner(System.in);
 
-        // Input Nama
-        System.out.print("Masukkan Nama: ");
-        String nama = scanner.nextLine(); // Menggunakan nextLine() untuk mengambil seluruh teks
+        String name;
+        int birth;
+        String jenisKelamin;
 
-        // Input Jenis Kelamin
+        System.out.print("Masukan nama anda: ");
+        name = scanner.nextLine();
         System.out.print("Masukkan Jenis Kelamin (L/P): ");
-        String gender = scanner.next().toUpperCase(); // Mengubah input menjadi huruf besar
+        String gender = scanner.next().toUpperCase(); // Mengubah inputan menjadi huruf besar
 
         // Menentukan jenis kelamin
-        String jenisKelamin;
         if (gender.equals("L")) {
             jenisKelamin = "Laki-laki";
         } else if (gender.equals("P")) {
             jenisKelamin = "Perempuan";
         } else {
-            jenisKelamin = "Tidak diketahui"; // Jika input tidak valid
+            jenisKelamin = "Tidak diketahui";
         }
+        System.out.print("Masukan Tahun Lahir : ");
+        birth = scanner.nextInt();
 
-        // Input Tahun Lahir
-        System.out.print("Masukkan Tahun Lahir: ");
-        int tahunLahir = scanner.nextInt();
+        // fungsi untuk menghitung usia
+        int tahunSekarang = 2025;
+        int usia = tahunSekarang - birth;
 
-        // Hitung Usia
-        int tahunSekarang = 2025; // Tahun saat ini (bisa juga menggunakan Calendar.getInstance().get(Calendar.YEAR))
-        int usia = tahunSekarang - tahunLahir;
-
-        // Cetak Data Diri
-        System.out.println("\n=== Data Diri ===");
-        System.out.println("Nama         : " + nama);
-        System.out.println("Jenis Kelamin: " + jenisKelamin);
-        System.out.println("Tahun Lahir  : " + tahunLahir);
-        System.out.println("Usia         : " + usia + " tahun");
+        System.out.println("Data Diri :");
+        System.out.println("Nama : " + name);
+        System.out.println("Jenis Kelamin : " + jenisKelamin);
+        System.out.println("Tahun Lahir : " + birth);
+        System.out.println("Usia : " + usia);
 
         scanner.close(); // Menutup scanner untuk menghindari kebocoran sumber daya
     }
