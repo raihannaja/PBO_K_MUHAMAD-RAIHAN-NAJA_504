@@ -6,8 +6,9 @@ public class Main {
         System.out.println("Hello, World!");
         System.out.print("Masukkan nama Anda: ");
         String name = scanner.nextLine();
-
-        System.out.println("Halo, " + name + "! Selamat datang.");
+        System.out.print("Masukan nim: ");
+        int Nim = scanner.nextInt();
+        System.out.println("Halo, " + name + Nim + "! Selamat datang.");
 
         scanner.close();
     }
